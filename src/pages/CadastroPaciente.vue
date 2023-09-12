@@ -1,7 +1,8 @@
 <template>
-  <div class="q-pa-md">
-    <q-input v-model="text" label="Nome" :dense="dense"></q-input>
-  </div>
+  <q-page padding>
+ <h3>Cadastro do Paciente</h3>
+
+  </q-page>
 </template>
 
 <script>
@@ -9,9 +10,6 @@ import { ref } from 'vue'
 
 export default {
   setup () {
-    // Variáveis reativas
-    const text = ref('')
-    const dense = ref(false)
 
     return {
       text,

@@ -7,6 +7,7 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/cadastroPaciente', component: () => import('pages/CadastroPaciente.vue') },
 
+
     ]
   },
   {
@@ -14,6 +15,7 @@ const routes = [
     component: () => import('layouts/LoginPacienteLayout.vue'),
     children: [
       { path: '', component: () => import('pages/LoginPaciente.vue') },
+
 
     ]
   },
