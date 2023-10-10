@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md">
     <q-layout view="lHh Lpr lff">
-      <q-header elevated class="bg-blue-7" >
+      <q-header elevated class="amber-5" >
         <q-toolbar>
           <q-toolbar-title>
       SabinoCare Card - Cartão de saúde</q-toolbar-title>

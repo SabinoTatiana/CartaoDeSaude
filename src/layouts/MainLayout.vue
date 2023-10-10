@@ -94,7 +94,7 @@ export default {
 
 .my-menu-link{
   color: rgb(238, 238, 238);
-  background: #0083da;
+  background: amber-5;
 }
 
 </style>
