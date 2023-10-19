@@ -37,7 +37,14 @@
               </q-item-section>
             </q-item>
 
-
+            <q-item clickable v-ripple to="/cadastroPaciente" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="ti-user" />
+              </q-item-section>
+              <q-item-section>
+               Cadastro
+              </q-item-section>
+            </q-item>
 
           </q-list>
         </q-scroll-area>

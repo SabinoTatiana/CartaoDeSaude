@@ -1,9 +1,11 @@
 <template>
   <q-page class="container" padding>
-    <q-form @submit="onSubmit" class="login-form">
-      <div class="login-content">
+    <q-form @submit="onSubmit" class="login-form" >
+      <div class="login-content"
+      >
         <p class="text-h3 text-center text-blue-10"
         style="background: radial-gradient(circle, #3f83c2 0%, #f3f3f7 100%)"
+
         >Login do Paciente</p>
 
         <q-row justify="center" align="center" class="q-mb-md">
@@ -47,9 +49,28 @@
               @click="forgotPassword"
               flat
               dense
+              style="margin-left: 200px;"
             />
           </q-col>
+
         </q-row>
+        <q-row justify="center" align="center">
+
+          <q-item clickable v-ripple to="/CadastroPaciente" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-btn label="cadastrar"
+            type="submit"
+            color="primary"
+            @click="Cadastrar"
+            style="margin-left: 300px;"
+
+
+            />
+              </q-item-section>
+
+            </q-item>
+        </q-row>
+
       </div>
     </q-form>
   </q-page>
@@ -74,6 +95,8 @@ export default {
   }
 };
 </script>
+
+
 
 <style scoped>
 .login-form {

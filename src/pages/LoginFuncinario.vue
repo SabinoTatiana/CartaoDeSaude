@@ -35,6 +35,7 @@
         <q-row justify="center" align="center">
           <q-col sm="12" md="6">
             <q-btn label="Entrar" type="submit" color="primary"/>
+           
           </q-col>
         </q-row>
 

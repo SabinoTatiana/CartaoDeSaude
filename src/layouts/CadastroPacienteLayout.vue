@@ -1,10 +1,10 @@
 <template>
   <div class="q-pa-md">
     <q-layout view="lHh Lpr lff">
-      <q-header elevated class="bg-blue-7" >
+      <q-header elevated class="amber-5" >
         <q-toolbar>
           <q-toolbar-title>
-      </q-toolbar-title>
+      SabinoCare Card - Cartão de saúde</q-toolbar-title>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         </q-toolbar>
       </q-header>
@@ -28,41 +28,16 @@
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple to="/paciente" active-class="my-menu-link">
-              <q-item-section avatar>
-                <q-icon name="ti-user" />
-              </q-item-section>
-              <q-item-section>
-               Paciente
-              </q-item-section>
-            </q-item>
-            <q-item clickable v-ripple to="/funcionario" active-class="my-menu-link">
-              <q-item-section avatar>
-                <q-icon name="ti-user" />
-              </q-item-section>
-              <q-item-section>
-                Funcionario
-              </q-item-section>
-            </q-item>
-
-            <q-item clickable v-ripple to="/gestao" active-class="my-menu-link">
-              <q-item-section avatar>
-                <q-icon name="ti-settings" />
-              </q-item-section>
-              <q-item-section>
-                Gestao
-              </q-item-section>
-            </q-item>
 
 
 
 
           </q-list>
         </q-scroll-area>
-        <q-img class="absolute-top" src="icons\Crianças.jpg" style="height: 150px">
+        <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
           <div class="absolute-bottom bg-blue-7">
             <q-avatar size="100px" class="q-mb-sm">
-              <img src="icons\Crianças.jpg">
+              <img src="icons\Jonathan.jpeg">
             </q-avatar>
             <div class="text-weight-bold">Bem-vindo</div>
 
@@ -94,7 +69,7 @@ export default {
 
 .my-menu-link{
   color: rgb(238, 238, 238);
-  background: amber-5;
+  background: #0083da;
 }
 
 </style>

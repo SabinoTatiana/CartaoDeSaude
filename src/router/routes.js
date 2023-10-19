@@ -1,13 +1,9 @@
-
 const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/cadastroPaciente', component: () => import('pages/CadastroPaciente.vue') },
-
-
     ]
   },
   {
@@ -20,11 +16,28 @@ const routes = [
     ]
   },
   {
+    path: '/cadastroPaciente',
+    component: () => import('layouts/cadastroPacienteLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/CadastroPaciente.vue') },
+
+    ]
+  },
+
+  {
+    path: '/cadastrar',
+    component: () => import('layouts/CadastroPacienteLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/CadastroPaciente.vue') },
+
+    ]
+  },
+
+  {
     path: '/funcionario',
     component: () => import('layouts/LoginFuncionarioLayout.vue'),
     children: [
       { path: '', component: () => import('pages/LoginFuncionario.vue') },
-
     ]
   },
   {
@@ -35,13 +48,16 @@ const routes = [
 
     ]
   },
+  {
+    path: '/404',
+    component: () => import('pages/ErrorNotFound.vue'),
 
-  // Always leave this as last one,
-  // but you can also remove it
+  },
+  // Rota padrão para capturar qualquer caminho não correspondido
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
-  }
-]
+    redirect: '/404',
+  },
+];
 
-export default routes
+export default routes;
