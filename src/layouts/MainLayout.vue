@@ -1,15 +1,16 @@
 <template>
   <div class="q-pa-md">
     <q-layout view="lHh Lpr lff">
-      <q-header elevated class="bg-blue-7" >
+
         <q-toolbar>
           <q-toolbar-title>
       </q-toolbar-title>
-          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+
         </q-toolbar>
-      </q-header>
+      
 
       <q-drawer
+      v-if="false"
         v-model="drawer"
         show-if-above
         :width="200"

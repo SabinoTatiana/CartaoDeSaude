@@ -14,6 +14,7 @@
               icon="event"
               filled
               v-model="name"
+
               label="Digite o nome do usuário*"
               lazy-rules
               :rules="[ val => val && val.length > 0 || '']"

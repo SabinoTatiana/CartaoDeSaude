@@ -3,13 +3,13 @@
     <q-layout view="lHh Lpr lff">
       <q-header elevated class="amber-5" >
         <q-toolbar>
-          <q-toolbar-title>
-      SabinoCare Card - Cartão de saúde</q-toolbar-title>
+
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         </q-toolbar>
       </q-header>
 
       <q-drawer
+      v-if="true"
         v-model="drawer"
         show-if-above
         :width="200"

@@ -1,66 +1,118 @@
 <template>
   <q-page class="container" padding>
-    <div class="full-screen">
-      <q-img
+    <q-form @submit.prevent="onSubmit" class="login-form">
+      <div class="login-content">
+        <p class="text-h4 text-center text-blue-10" style="background: radial-gradient(circle, #3f83c2 0%, #f3f3f7 100%)">
+          Login
+        </p>
 
-      src="icons\medico.jpg"
-        style="width: 100%; height: 100%; background: radial-gradient(circle, #35a2ff 50%, #fde50a 100%); margin-top: 30%; "
-      >
-<q-div>
+        <q-row justify="center" align="center" class="q-mb-md">
+          <q-col sm="12" md="6">
+            <q-input
+              icon="event"
+              filled
+              v-model="name"
+              label="Digite o nome do usuário*"
+              lazy-rules
+              :rules="[val => val && val.length > 0 || '']"
+            />
 
-<q-row>
-<q-linear-progress query style="margin-top: 30%;"/>
+            <q-input
+              filled
+              type="password"
+              v-model="password"
+              label="Digite a senha*"
+              text-color="Blue"
+              lazy-rules
+              :rules="[val => val !== null && val !== '' || '', val => val > 0 && val < 100 || '']"
+            />
+          </q-col>
+        </q-row>
 
-<q-linear-progress indeterminate color="warning" class="q-mt-sm center"  />
-<h3 class="text-center text-white " style="background: radial-gradient(circle, #2990eb 10%, #f7e226 100%);">SabinoCare Card - Cartão de saúde</h3>
-<q-linear-progress indeterminate rounded color="blue" class="q-mt-sm" />
-<q-linear-progress query color="warning" class="q-mt-sm"  />
-</q-row>
+        <q-row justify="center" align="center">
+          <q-col sm="12" md="6">
+            <q-btn label="Entrar" type="submit" color="primary" />
+          </q-col>
+        </q-row>
 
-</q-div>
+        <q-row justify="center" align="center" class="q-mt-md">
+          <q-col sm="12" md="6">
+            <q-btn
+              label="Esqueceu a senha?"
+              color="primary"
+              @click="forgotPassword"
+              flat
+              dense
+              style="margin-left: 130px;"
+            />
+          </q-col>
+        </q-row>
 
-
-
-  <!--  <q-card
-      class="my-card text-white"
-      style="background: radial-gradient(circle, #35a2ff 0%, #f3e524 100%); margin-top: 10%; height: 35%;margin-left: 100px; width: 30%;"
-    >
-      <q-card-section>
-        <div class="text-h6">Digital Card- Cartão de saúde</div>
-        <div class="text-subtitle2">by Tatiana Sabino</div>
-        <q-img class="bamber-5"
-        src="icons\banana.jpg"
-        style="width: 100%; height: 100%;"
-      >>
-
-        </q-img>
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        {{ lorem }}
-      </q-card-section>
-    </q-card> -->
-    </q-img>
-    </div>
+        <q-row justify="center" align="center">
+          <q-item clickable v-ripple to="/CadastroPaciente" active-class="my-menu-link">
+            <q-item-section avatar>
+              <q-btn
+                label="Cadastrar"
+                type="submit"
+                color="primary"
+                @click="Cadastrar"
+                style="margin-left: 220px;"
+              />
+            </q-item-section>
+          </q-item>
+        </q-row>
+      </div>
+    </q-form>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'IndexPage',
-});
+export default {
+  data() {
+    return {
+      name: '',
+      password: '',
+      accept: false
+    };
+  },
+  methods: {
+    onSubmit() {
+      if (!this.accept) {
+        this.$q.notify({
+          color: 'red-5',
+          textColor: 'white',
+          icon: 'warning',
+          message: 'Você precisa aceitar os termos e a licença primeiro'
+        });
+      } else {
+        // Lógica de submissão do formulário
+      }
+    },
+    forgotPassword() {
+      // Adicione lógica para redirecionar para a página/modal "Esqueceu a senha?"
+      console.log('Redirecionar para a página/modal de recuperação de senha');
+    },
+    Cadastrar() {
+      // Adicione lógica para redirecionar para a página de cadastro de pacientes
+      this.$router.push('/CadastroPaciente');
+    }
+  }
+};
 </script>
 
 <style scoped>
-.full-screen {
-  width: 100%;
+.login-form {
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background: url('./icons/medico.jpg') center center;
+  background-size: cover;
 }
 
+.login-content {
+  /* Adicione estilos adicionais conforme necessário */
+}
 
+/* Adicione mais estilos conforme necessário */
 </style>
